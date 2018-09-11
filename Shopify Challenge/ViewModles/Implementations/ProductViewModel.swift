@@ -13,8 +13,41 @@ final class ProductViewModel {
     private(set) var products: [Product] = []
     
     // MARK: - Helper Functions
-    func filter(_ products: [Product], on tag: String) {
+    func setStartingProducts(products: [Product]) {
+        self.products = products
+    }
+
+    func filter(_ products: [Product], on tag: String, with completion: @escaping ((Result<Void>) -> Void)) {
         self.products = products.filter { $0.tags.contains(tag) }
+        
+        let downloadGroup = DispatchGroup()
+        
+        for product in self.products {
+            downloadGroup.enter()
+            fetchImage(from: product.imageSource) { result in
+                switch result {
+                case .success(let image):
+                    product.image = image
+                    downloadGroup.leave()
+                case .error:
+                    downloadGroup.leave()
+                }
+            }
+        }
+        
+        downloadGroup.wait()
+        completion(.success(()))
+    }
+    
+    private func fetchImage(from url: URL, with completion: @escaping ((Result<UIImage>) -> Void)) {
+        ImageService().fetchImage(from: url) { result in
+            switch result {
+            case .success(let image):
+                completion(.success(image))
+            case .error(let error):
+                completion(.error(error))
+            }
+        }
     }
 }
 

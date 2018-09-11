@@ -6,7 +6,7 @@
 //  Copyright © 2018 Domenic Bianchi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Product: Decodable {
     // MARK: - Properties
@@ -22,6 +22,9 @@ class Product: Decodable {
     let tags: [String]
     let publishedScope: String
     let variants: [Variant]
+    let imageSource: URL
+    /// This property is not populated until it is needed to prevent making unnecessary network requests
+    var image: UIImage?
     
     // MARK: - Lifecycle Functions
     init(id: Int,
@@ -35,7 +38,9 @@ class Product: Decodable {
          datePublished: Date,
          tags: [String],
          publishedScope: String,
-         variants: [Variant]) {
+         variants: [Variant],
+         imageSource: URL,
+         image: UIImage? = nil) {
 
         self.id = id
         self.title = title
@@ -49,6 +54,8 @@ class Product: Decodable {
         self.tags = tags
         self.publishedScope = publishedScope
         self.variants = variants
+        self.imageSource = imageSource
+        self.image = image
     }
     
     // MARK: - Decodable
@@ -65,6 +72,7 @@ class Product: Decodable {
         case tags
         case publishedScope = "published_scope"
         case variants
+        case image
     }
     
     required convenience init(from decoder: Decoder) throws {
@@ -81,6 +89,7 @@ class Product: Decodable {
         let tags = try container.decode(String.self, forKey: .tags)
         let publishedScope = try container.decode(String.self, forKey: .publishedScope)
         let variants = try container.decode([Variant].self, forKey: .variants)
+        let image = try container.decode(Image.self, forKey: .image)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
@@ -104,6 +113,7 @@ class Product: Decodable {
                   datePublished: datePublished,
                   tags: tagsArray,
                   publishedScope: publishedScope,
-                  variants: variants)
+                  variants: variants,
+                  imageSource: image.source)
     }
 }

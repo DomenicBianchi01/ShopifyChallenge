@@ -13,6 +13,7 @@ final class ProductTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet var productNameLabel: UILabel!
     @IBOutlet var productInventoryLabel: UILabel!
+    @IBOutlet var productImage: UIImageView!
     
     // MARK: - Lifecycle Functions
     override func awakeFromNib() {
@@ -37,5 +38,6 @@ extension ProductTableViewCell: Configurable {
         }
         productNameLabel.text = product.title
         productInventoryLabel.text = "Total Inventory: " + String(product.variants.map { $0.inventory }.reduce(0, +))
+        productImage.image = product.image
     }
 }

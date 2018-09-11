@@ -27,6 +27,8 @@
 		B0B79BD021473A8500F44142 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BCF21473A8500F44142 /* ProductViewModel.swift */; };
 		B0B79BD4214748EE00F44142 /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD3214748EE00F44142 /* Variant.swift */; };
 		B0B79BD621474C4300F44142 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD521474C4300F44142 /* ProductTableViewCell.swift */; };
+		B0B79BD8214750CA00F44142 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD7214750CA00F44142 /* ImageService.swift */; };
+		B0B79BDA214754EE00F44142 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD9214754EE00F44142 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		B0B79BCF21473A8500F44142 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		B0B79BD3214748EE00F44142 /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
 		B0B79BD521474C4300F44142 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		B0B79BD7214750CA00F44142 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		B0B79BD9214754EE00F44142 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				B0B79BAC21471AEB00F44142 /* JSONService.swift */,
 				B0B79BB121471B8400F44142 /* JSONError.swift */,
 				B0B79BBA214724A300F44142 /* ProductService.swift */,
+				B0B79BD7214750CA00F44142 /* ImageService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				B0B79BBF21472FDD00F44142 /* Products.swift */,
 				B0B79BBD214724E200F44142 /* Product.swift */,
 				B0B79BD3214748EE00F44142 /* Variant.swift */,
+				B0B79BD9214754EE00F44142 /* Image.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 				B0B79BB92147243E00F44142 /* TagViewModel.swift in Sources */,
 				B0B79BB021471B4500F44142 /* HTTPURLResponseExtensions.swift in Sources */,
 				B0B79BAD21471AEB00F44142 /* JSONService.swift in Sources */,
+				B0B79BD8214750CA00F44142 /* ImageService.swift in Sources */,
 				B0B79BC92147342A00F44142 /* Configurable.swift in Sources */,
+				B0B79BDA214754EE00F44142 /* Image.swift in Sources */,
 				B0B79BC72147340000F44142 /* TagTableViewCell.swift in Sources */,
 				B0B79BC021472FDD00F44142 /* Products.swift in Sources */,
 				B0B79B9C21471A5300F44142 /* TagsViewController.swift in Sources */,

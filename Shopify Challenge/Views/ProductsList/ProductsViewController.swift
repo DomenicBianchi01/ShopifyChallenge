@@ -18,13 +18,19 @@ final class ProductsViewController: UIViewController {
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.reloadData()
+
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+
+        viewModel.filter(viewModel.products, on: self.title ?? "") { _ in
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Helper Functions
     func selectedTag(_ tag: String, products: [Product]) {
         self.title = tag
-        viewModel.filter(products, on: tag)
+        viewModel.setStartingProducts(products: products)
     }
 }
 
