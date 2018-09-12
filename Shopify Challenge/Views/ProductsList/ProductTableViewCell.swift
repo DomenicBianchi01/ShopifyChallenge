@@ -14,11 +14,16 @@ final class ProductTableViewCell: UITableViewCell {
     @IBOutlet var productNameLabel: UILabel!
     @IBOutlet var productInventoryLabel: UILabel!
     @IBOutlet var productImage: UIImageView!
+    @IBOutlet var imageLoadingIndicator: UIActivityIndicatorView!
     
     // MARK: - Lifecycle Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageLoadingIndicator.startAnimating()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,5 +44,10 @@ extension ProductTableViewCell: Configurable {
         productNameLabel.text = product.title
         productInventoryLabel.text = "Total Inventory: " + String(product.variants.map { $0.inventory }.reduce(0, +))
         productImage.image = product.image
+        
+        // For the scope of this project, every product has an image. Therefore we can say that if the image in the cell is nil, we are still waiting for it to be loaded
+        if productImage.image != nil {
+            imageLoadingIndicator.stopAnimating()
+        }
     }
 }

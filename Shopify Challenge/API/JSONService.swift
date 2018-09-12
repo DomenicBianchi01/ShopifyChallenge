@@ -9,13 +9,12 @@
 import UIKit
 
 /**
- A class meant to be inherited by `Service` classes. This class helps encode JSON requests and decodes JSON responses. This class should never be used directly from a view model.
+ A class meant to be inherited by `Service` classes. This class helps encode and decode JSON responses. This class should never be used directly from a view model.
  
  Use the `request` function in this class to make HTTP requests.
  */
 class JSONService {
     // MARK: - Properties
-    ///IMPORTANT NOTE: `JSONService` can only handle one network call at a time
     private var urlDataTask: URLSessionDataTask? = nil
     
     // MARK: - Enums

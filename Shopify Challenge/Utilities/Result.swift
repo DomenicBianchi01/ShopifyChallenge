@@ -8,7 +8,6 @@
 
 import Foundation
 
-//https://www.sitepoint.com/improve-swift-closures-result/
 /** A generic enum to use when returning values or errors from completion blocks.
  
  If nothing needs to be returned, set `T` to be `Void`.

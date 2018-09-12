@@ -10,7 +10,7 @@ import UIKit
 
 final class ProductsViewController: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
     let viewModel = ProductViewModel()
@@ -21,24 +21,31 @@ final class ProductsViewController: UIViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-
-        viewModel.filter(viewModel.products, on: self.title ?? "") { _ in
-            self.tableView.reloadData()
+        
+        // It is not possible for this function to return a error. If an image for a product couldn't be fetched, that is not considered an error since there may be other product images that can be fetched
+        viewModel.filterProducts { _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
     // MARK: - Helper Functions
-    func selectedTag(_ tag: String, products: [Product]) {
+    /**
+     Set the tag that was selected and the list of unfiltered products. This function is called after a tag is selected in the `TagsViewController`
+     
+     - parameter tag: The selected tag
+     - parameter products: Unfiltered array of products
+    */
+    func tagSelected(_ tag: String, products: [Product]) {
+        viewModel.setStartingProductsAndSearchTag(products: products, tag: tag)
         self.title = tag
-        viewModel.setStartingProducts(products: products)
     }
 }
 
 // MARK: - UITableViewDelegate
 extension ProductsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { /* Not used */ }
 }
 
 // MARK: - UITableViewDataSource

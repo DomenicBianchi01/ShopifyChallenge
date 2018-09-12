@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -110,12 +109,17 @@
                                                         <constraint firstAttribute="height" constant="61" id="Wzw-g6-bR2"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="r2t-lV-0ej">
+                                                    <rect key="frame" x="303" y="26" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oPx-4d-Ghr" firstAttribute="leading" secondItem="veD-3S-Y6l" secondAttribute="leadingMargin" id="4mq-TE-Sme"/>
+                                                <constraint firstItem="r2t-lV-0ej" firstAttribute="centerX" secondItem="9Z6-Rj-UYD" secondAttribute="centerX" id="6aa-oP-z6V"/>
                                                 <constraint firstItem="9Z6-Rj-UYD" firstAttribute="leading" secondItem="oPx-4d-Ghr" secondAttribute="trailing" constant="8" id="9km-i2-uyl"/>
                                                 <constraint firstAttribute="trailing" secondItem="9Z6-Rj-UYD" secondAttribute="trailing" constant="15" id="IFr-mV-Bqq"/>
                                                 <constraint firstItem="X8p-Gh-AZA" firstAttribute="leading" secondItem="oPx-4d-Ghr" secondAttribute="leading" id="LVq-C9-KIH"/>
+                                                <constraint firstItem="r2t-lV-0ej" firstAttribute="centerY" secondItem="9Z6-Rj-UYD" secondAttribute="centerY" id="SbU-OH-cXc"/>
                                                 <constraint firstItem="9Z6-Rj-UYD" firstAttribute="leading" secondItem="X8p-Gh-AZA" secondAttribute="trailing" constant="8" symbolic="YES" id="VJ7-6f-R2D"/>
                                                 <constraint firstItem="oPx-4d-Ghr" firstAttribute="top" secondItem="veD-3S-Y6l" secondAttribute="topMargin" constant="7" id="VcJ-go-lwn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="X8p-Gh-AZA" secondAttribute="bottom" constant="9.5" id="Yg1-Yc-RRg"/>
@@ -124,6 +128,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageLoadingIndicator" destination="r2t-lV-0ej" id="d2X-fl-5aG"/>
                                             <outlet property="productImage" destination="9Z6-Rj-UYD" id="Pd6-W9-lem"/>
                                             <outlet property="productInventoryLabel" destination="X8p-Gh-AZA" id="1xK-dC-x1R"/>
                                             <outlet property="productNameLabel" destination="oPx-4d-Ghr" id="RK4-vt-34i"/>

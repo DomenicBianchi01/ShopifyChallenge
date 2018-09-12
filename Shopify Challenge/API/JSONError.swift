@@ -8,7 +8,8 @@
 
 import Foundation
 
-/// A class that can be used to decode a JSON response containing only an error
-class JSONError: Decodable {
+/// A class that can be used to decode a JSON response containing only an error.
+final class JSONError: Decodable {
+    /// Refers to the key-value pair the API returns (the key is named "errors")
     var errors: String
 }

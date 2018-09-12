@@ -17,14 +17,13 @@ final class TagsViewController: UIViewController {
 
     // MARK: - Lifecycle Functions
     override func viewDidLoad() {
-        super.viewDidLoad()
         viewModel.fetchTags { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success():
                     self.tableView.reloadData()
                 case .error(let error):
-                    print(error) //TODO
+                    self.displayAlert(title: "Error", message: error.localizedDescription)
                 }
             }
         }
@@ -33,7 +32,7 @@ final class TagsViewController: UIViewController {
     // MARK: - Segue Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "productsSegue", let selectedTag = viewModel.selectedTag, let viewController = segue.destination as? ProductsViewController {
-            viewController.selectedTag(selectedTag, products: viewModel.products)
+            viewController.tagSelected(selectedTag, products: viewModel.products)
         }
     }
 }
@@ -42,6 +41,7 @@ final class TagsViewController: UIViewController {
 extension TagsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.setSelectedTag(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "productsSegue", sender: self)
     }
 }

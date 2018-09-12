@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0900E902147E43000C284BE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0900E8F2147E43000C284BE /* UIViewControllerExtensions.swift */; };
+		B0900E922147F95900C284BE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0900E912147F95900C284BE /* README.txt */; };
 		B0B79B9A21471A5300F44142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79B9921471A5300F44142 /* AppDelegate.swift */; };
 		B0B79B9C21471A5300F44142 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79B9B21471A5300F44142 /* TagsViewController.swift */; };
 		B0B79B9F21471A5300F44142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B79B9D21471A5300F44142 /* Main.storyboard */; };
@@ -27,11 +29,13 @@
 		B0B79BD021473A8500F44142 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BCF21473A8500F44142 /* ProductViewModel.swift */; };
 		B0B79BD4214748EE00F44142 /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD3214748EE00F44142 /* Variant.swift */; };
 		B0B79BD621474C4300F44142 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD521474C4300F44142 /* ProductTableViewCell.swift */; };
-		B0B79BD8214750CA00F44142 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD7214750CA00F44142 /* ImageService.swift */; };
+		B0B79BD8214750CA00F44142 /* ProductImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD7214750CA00F44142 /* ProductImageService.swift */; };
 		B0B79BDA214754EE00F44142 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B79BD9214754EE00F44142 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0900E8F2147E43000C284BE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		B0900E912147F95900C284BE /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		B0B79B9621471A5300F44142 /* Shopify Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopify Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B79B9921471A5300F44142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B79B9B21471A5300F44142 /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		B0B79BCF21473A8500F44142 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		B0B79BD3214748EE00F44142 /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
 		B0B79BD521474C4300F44142 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
-		B0B79BD7214750CA00F44142 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		B0B79BD7214750CA00F44142 /* ProductImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageService.swift; sourceTree = "<group>"; };
 		B0B79BD9214754EE00F44142 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0900E93214827DF00C284BE /* ProductsList */ = {
+			isa = PBXGroup;
+			children = (
+				B0B79BCF21473A8500F44142 /* ProductViewModel.swift */,
+			);
+			path = ProductsList;
+			sourceTree = "<group>";
+		};
+		B0900E94214827E400C284BE /* TagsList */ = {
+			isa = PBXGroup;
+			children = (
+				B0B79BB82147243E00F44142 /* TagViewModel.swift */,
+			);
+			path = TagsList;
+			sourceTree = "<group>";
+		};
 		B0B79B8D21471A5200F44142 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,7 @@
 		B0B79B9821471A5300F44142 /* Shopify Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				B0900E912147F95900C284BE /* README.txt */,
 				B0B79BBC214724D500F44142 /* Entities */,
 				B0B79BB321471BC500F44142 /* Utilities */,
 				B0B79BAE21471B2E00F44142 /* Extensions */,
@@ -109,7 +130,7 @@
 				B0B79BAC21471AEB00F44142 /* JSONService.swift */,
 				B0B79BB121471B8400F44142 /* JSONError.swift */,
 				B0B79BBA214724A300F44142 /* ProductService.swift */,
-				B0B79BD7214750CA00F44142 /* ImageService.swift */,
+				B0B79BD7214750CA00F44142 /* ProductImageService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -118,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B79BAF21471B4500F44142 /* HTTPURLResponseExtensions.swift */,
+				B0900E8F2147E43000C284BE /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -126,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				B0B79BB421471BD400F44142 /* Result.swift */,
+				B0B79BC22147307D00F44142 /* TableViewModelable.swift */,
+				B0B79BC82147342A00F44142 /* Configurable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -133,9 +157,8 @@
 		B0B79BB62147240F00F44142 /* ViewModles */ = {
 			isa = PBXGroup;
 			children = (
-				B0B79BC22147307D00F44142 /* TableViewModelable.swift */,
-				B0B79BC82147342A00F44142 /* Configurable.swift */,
-				B0B79BC12147306900F44142 /* Implementations */,
+				B0900E93214827DF00C284BE /* ProductsList */,
+				B0900E94214827E400C284BE /* TagsList */,
 			);
 			path = ViewModles;
 			sourceTree = "<group>";
@@ -158,15 +181,6 @@
 				B0B79BD9214754EE00F44142 /* Image.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		B0B79BC12147306900F44142 /* Implementations */ = {
-			isa = PBXGroup;
-			children = (
-				B0B79BB82147243E00F44142 /* TagViewModel.swift */,
-				B0B79BCF21473A8500F44142 /* ProductViewModel.swift */,
-			);
-			path = Implementations;
 			sourceTree = "<group>";
 		};
 		B0B79BCA214739CA00F44142 /* TagsList */ = {
@@ -247,6 +261,7 @@
 			files = (
 				B0B79BA421471A5400F44142 /* LaunchScreen.storyboard in Resources */,
 				B0B79BA121471A5400F44142 /* Assets.xcassets in Resources */,
+				B0900E922147F95900C284BE /* README.txt in Resources */,
 				B0B79B9F21471A5300F44142 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +284,8 @@
 				B0B79BB92147243E00F44142 /* TagViewModel.swift in Sources */,
 				B0B79BB021471B4500F44142 /* HTTPURLResponseExtensions.swift in Sources */,
 				B0B79BAD21471AEB00F44142 /* JSONService.swift in Sources */,
-				B0B79BD8214750CA00F44142 /* ImageService.swift in Sources */,
+				B0B79BD8214750CA00F44142 /* ProductImageService.swift in Sources */,
+				B0900E902147E43000C284BE /* UIViewControllerExtensions.swift in Sources */,
 				B0B79BC92147342A00F44142 /* Configurable.swift in Sources */,
 				B0B79BDA214754EE00F44142 /* Image.swift in Sources */,
 				B0B79BC72147340000F44142 /* TagTableViewCell.swift in Sources */,
@@ -420,16 +436,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 667D8S5SPP;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Shopify Challenge/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.domenicbianchi.Shopify-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,16 +456,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 667D8S5SPP;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Shopify Challenge/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.domenicbianchi.Shopify-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
